@@ -13,8 +13,6 @@ The Promise can be in 1 of 3 states
 const promiseName = new Promise(executor);
 ```
 
-HI
-
 The executor is a function to be executed by the constructor. It receives two functions as parameters (arguments): resolveFunc (onFulfilled) and rejectFunc(onRejected). Any errors thrown in the executor will cause the promise to be rejected, and the return value will be neglected.
 
 ## Executor: Resolving a Promise
