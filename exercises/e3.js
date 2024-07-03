@@ -15,12 +15,13 @@
  * Example: export const getPromise(num) => return <Your code of promise>
  */
 export const getPromise = (num) => {
+  const type = typeof num;
   const promise = new Promise((res) => res(num));
-    if(typeof(num) === 'number' && num % 1 === 0) {
-      return promise;
-    } else {
-      return 0;
-    }
+  if(type === 'number' && num % 1 === 0) {
+    return promise;
+ } else {
+  return 0;
+ }
 };
 
 /**
