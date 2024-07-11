@@ -1,9 +1,6 @@
 export const getFirstResolvedPromise = (promises) => {
   //*  write code to pass test ⬇ ️
   return Promise.any(promises)
-  // .then((promise) => promise)
-  // .catch((promise) => console.log('error',  promise))
-
 };
 
 export const getFirstPromiseOrFail = (promises) => {
