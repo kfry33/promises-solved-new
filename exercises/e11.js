@@ -13,7 +13,6 @@
  * * set the usersUrl constant to store the json-server 'users' endpoint path
 */
 
-import fetch from "node-fetch";
 export const usersUrl = 'http://localhost:3000/users/';
 
 /**
@@ -57,8 +56,9 @@ const getData = fetch(usersUrl);
 export const result = getData
 .then(res => res.json())
 .then((data) => {
-  console.log(getLoginList(data))
-  return getLoginList(data);
+  const result = getLoginList(data);
+  console.log(result)
+  return result;
 });
 
 

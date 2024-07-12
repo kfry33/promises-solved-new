@@ -11,7 +11,6 @@
 export const attachTitle = (arg) => {
   // Your code goes here...
   return `DR. ${arg}`;
-  // return Promise;
 };
 
 /**
@@ -24,13 +23,14 @@ export const attachTitle = (arg) => {
 
 export const getPromise = () => {
   // Your code goes here...
-  const promise = new Promise((res, err) => {
-    setTimeout(() => {
-      res('MANHATTAN');
-    }, 1000);
-  });
-  return promise.then((data) => attachTitle(data))
-  .then((data) => console.log(data)); 
+  return new Promise((res) => {
+    res('MANHATTAN');
+  })
+  .then((data) => attachTitle(data))
+  .then((data) => {
+    console.log(data)
+    return data;
+  })
 };
 
 // === TEST YOURSELF ===

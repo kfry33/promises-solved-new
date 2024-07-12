@@ -17,9 +17,7 @@
 export const handlePromise = () => {
   // Your code goes here...
   return new Promise((res, err) => {
-    setTimeout(() => {
       err('REJECTED')
-    })
   })
   .catch((err) => err)
   .finally(() => console.log('This promise is finished!'))

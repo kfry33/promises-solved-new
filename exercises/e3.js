@@ -14,14 +14,12 @@
  * * getPromise(num) function must be exported
  * Example: export const getPromise(num) => return <Your code of promise>
  */
-export const getPromise = (num) => {
-  const type = typeof num;
-  const promise = new Promise((res) => res(num));
-  if(type === 'number' && num % 1 === 0) {
-    return promise;
- } else {
-  return 0;
- }
+export const getPromise = (num) => { 
+  if(typeof num === 'number' && num % 1 === 0) {
+    return new Promise((res) => res(num));
+  } else {
+    return 0;
+  }
 };
 
 /**
@@ -36,11 +34,10 @@ export const getPromise = (num) => {
  * * if you have solved it successfully, the updateSumValue() function will return the value of 10;
  */
 export const updateSumValue = () => {
-  const sum = 2;
-  getPromise(120).then((data) => {
-    return data + sum;
-  })
-  return sum + 8;
+  let sum = 2;
+  getPromise(120).then((data) => sum += data);
+  sum += 8;
+  return sum;
 };
 
 // === TEST YOURSELF ===

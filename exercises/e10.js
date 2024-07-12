@@ -52,13 +52,8 @@ export const fetchAllCharactersByIds = async (ids) => {
   // To solve this you must fetch all characters passed in the array at the same time
   // use the `fetchCharacterById` function above to make this work
   //*  write code to pass test ⬇ ️
-  const result = await ids.map((id) => {
-   if(id) {
-    return fetchCharacterById(id);
-   } 
-  })
-  const list = Promise.all(result)
+  const result = ids.map((id) => fetchCharacterById(id));
+  return Promise.all(result)
   .then((data) => data)
   .catch(() => []);
-  return list;
 };
